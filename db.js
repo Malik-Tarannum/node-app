@@ -1,7 +1,11 @@
 const mongoose=require('mongoose')
-//Defione the mongo db connection url 
-const mongoURL= 'mongodb://localhost:27017/mydb'
+require('dotenv').config()
 
+//Defione the mongo db connection url 
+// const mongoURL= 'mongodb://localhost:27017/mydb'
+// const DB_URL=process.env.DB_URL
+//this will connect us with online server
+const mongoURL= process.env.MONGODB_URL
 //Setup mongoDB connection
 mongoose.connect(mongoURL,{
     useNewUrlParser: true,
